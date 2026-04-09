@@ -4,12 +4,6 @@ const nextConfig = {
   basePath: "/calendar",
   images: {
     unoptimized: true,
-    localPatterns: [
-      {
-        pathname: "/heroes/**",
-        search: "",
-      },
-    ],
   },
 };
 
