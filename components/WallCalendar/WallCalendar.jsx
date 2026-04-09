@@ -4,6 +4,7 @@ import { useNotes } from "@/hooks/useNotes";
 import { MONTH_THEMES } from "@/lib/monthThemes";
 import CalendarLayer from "../CalendarLayer/CalendarLayer";
 import styles from "./WallCalendar.module.css";
+import Image from "next/image";
 
 export default function WallCalendar() {
   const cal = useCalendarState();
@@ -48,12 +49,20 @@ export default function WallCalendar() {
           }}
         >
           <div className={styles.coils}>
-            <img
-              src="/hanger/coils.png"
+            <Image
+              src="/calendar/hanger/coils.png"
               alt="coil"
+              width={820}
+              height={40}
               className={styles.hangerImg}
             />
-            <img src="/hanger/nail.png" alt="nail" className={styles.nailImg} />
+            <Image
+              src="/calendar/hanger/nail.png"
+              alt="nail"
+              width={50}
+              height={50}
+              className={styles.nailImg}
+            />
           </div>
 
           <div className={styles.scene}>

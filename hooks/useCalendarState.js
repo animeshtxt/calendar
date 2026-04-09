@@ -48,23 +48,20 @@ export function useCalendarState() {
     setStartDate(null);
   }, [flipDir, next, prev]);
 
-  const handleDayClick = useCallback(
-    (year, month, day) => {
-      const clicked = { year, month, day };
-      setStartDate((prev) => {
-        if (
-          prev &&
-          prev.year === year &&
-          prev.month === month &&
-          prev.day === day
-        ) {
-          return null; // deselect
-        }
-        return clicked;
-      });
-    },
-    [],
-  );
+  const handleDayClick = useCallback((year, month, day) => {
+    const clicked = { year, month, day };
+    setStartDate((prev) => {
+      if (
+        prev &&
+        prev.year === year &&
+        prev.month === month &&
+        prev.day === day
+      ) {
+        return null;
+      }
+      return clicked;
+    });
+  }, []);
 
   const clearRange = useCallback(() => {
     setStartDate(null);
@@ -80,7 +77,6 @@ export function useCalendarState() {
     },
     [startDate],
   );
-
 
   return {
     cur,
