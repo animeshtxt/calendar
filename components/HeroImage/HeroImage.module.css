@@ -1,0 +1,126 @@
+.heroWrapper {
+  height: 30vh;
+  width: 100%;
+}
+
+.imageContainer {
+  position: relative;
+  height: 30vh;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.6s ease;
+}
+
+.imageContainer:hover .image {
+  transform: scale(1.03);
+}
+
+.chevronOverlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 38%;
+  height: 52%;
+  clip-path: polygon(28% 0%, 100% 0%, 100% 100%, 0% 100%);
+  opacity: 0.9;
+  transition: opacity 0.4s ease;
+}
+
+.monthTag {
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #fff;
+  z-index: 2;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.tagYear {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
+}
+
+.tagMonth {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-family: "Playfair Display", serif;
+  line-height: 1;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px 10px;
+  background: var(--accent);
+  transition: background 0.4s ease;
+}
+
+.navBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 14px;
+  border-radius: 6px;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+  font-family: inherit;
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: scale(1.1);
+}
+
+.navBtn:active {
+  background: rgba(255, 255, 255, 0.38);
+}
+
+.monthLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.year {
+  font-size: 0.72rem;
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.1em;
+}
+
+.month {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-family: "Playfair Display", serif;
+}
+
+@media (max-width: 660px) {
+  .imageContainer {
+    aspect-ratio: 4 / 3;
+  }
+  .chevronOverlay {
+    width: 52%;
+    height: 46%;
+  }
+}

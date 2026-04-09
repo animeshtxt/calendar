@@ -1,0 +1,77 @@
+/* ============================================
+   Wall Calendar — Global Design System
+   ============================================ */
+
+/* ---- Google Fonts are loaded in layout.jsx ---- */
+
+/* ---- CSS Custom Properties (Light theme default) ---- */
+:root {
+  /* Surfaces */
+  --color-bg: #f0f2f5;
+  --color-surface: #ffffff;
+  --color-input-bg: #f8f9fa;
+
+  /* Text */
+  --color-text: #1a1a2e;
+  --color-text-muted: #6b7280;
+
+  /* Borders / hover */
+  --color-border: #e5e7eb;
+  --color-hover: #f3f4f6;
+  --color-coil: #9ca3af;
+
+  /* Accent (overridden per-month in WallCalendar) */
+  --color-accent: #1565c0;
+  --color-accent-soft: rgba(21, 101, 192, 0.12);
+}
+
+/* ---- Dark theme ---- */
+[data-theme='dark'] {
+  --color-bg: #111827;
+  --color-surface: #1f2937;
+  --color-input-bg: #374151;
+
+  --color-text: #f9fafb;
+  --color-text-muted: #9ca3af;
+
+  --color-border: #374151;
+  --color-hover: #374151;
+  --color-coil: #6b7280;
+
+  --color-accent-soft: rgba(96, 165, 250, 0.15);
+}
+
+/* ---- Resets ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+img, video { display: block; max-width: 100%; }
+button { font-family: inherit; }
+a { color: inherit; }
+
+/* ---- Scrollbar styling (webkit) ---- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
